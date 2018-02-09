@@ -9,7 +9,7 @@
 struct BinancePriceProvider: CoinPriceProvider {
 
   func getPrice(of coin: Coin, in currency: FiatMoney, completion: @escaping (String?) -> Void) {
-    let url = URL(string: "https://www.binance.com/api/v1/ticker/allPrices")!
+    let url = URL(string: "https://us.binance.com/api/v1/ticker/allPrices")!
     URLSession.shared.dataTask(with: url) { data, _, error in
       guard let data = data, error == nil else {
         DispatchQueue.main.async {
